@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
+import LandingPage from './components/LandingPage';
+import {Route} from 'react-router-dom';
+import {Button, Container, Icon, Menu} from 'semantic-ui-react';
+
 import './App.css';
+import { NavLink } from 'react-router-dom/cjs/react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Menu>
+          <Menu.Item>
+            <NavLink to = '/' >  Home </NavLink>
+          </Menu.Item>
+        </Menu>
+
+        <Route
+          exact path = '/'
+          render = { (props) => <LandingPage {...props}  landingProp = {' the Landing Prop'}/> }
+        />
     </div>
   );
 }
