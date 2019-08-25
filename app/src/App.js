@@ -1,5 +1,8 @@
 import React from 'react';
 import LandingPage from './components/LandingPage';
+
+
+
 import {Route} from 'react-router-dom';
 import {Button, Container, Icon, Menu} from 'semantic-ui-react';
 
@@ -19,6 +22,8 @@ function App() {
           exact path = '/'
           render = { (props) => <LandingPage {...props}  landingProp = {' the Landing Prop'}/> }
         />
+
+
     </div>
   );
 }
