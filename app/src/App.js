@@ -19,7 +19,6 @@ function App() {
   return (
     <div className="App">
         <Menu>
-
           <Menu.Item>
             <PushSpinner  size={30} color="rebeccapurple"/>
             <NavLink to  = '/'> Landing Page </NavLink>
@@ -28,9 +27,9 @@ function App() {
             <GuardSpinner size = {30} frontColor= "deeppink" backColor = 'dodgerblue'/>
             <NavLink to  = '/avengers'> Avengers List Page </NavLink>
           </Menu.Item>
-
-
         </Menu>
+
+        
         <Route
           exact path = '/avengers/:id'
           render = { (props) => <AvengerItem {...props} heroProp = {' Only one Avenger'}/>}
