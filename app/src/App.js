@@ -31,6 +31,11 @@ function App() {
 
 
         </Menu>
+        <Route
+          exact path = '/avengers/:id'
+          render = { (props) => <AvengerItem {...props} heroProp = {' Only one Avenger'}/>}
+        />
+
 
         <Route
         exact path = '/avengers'
