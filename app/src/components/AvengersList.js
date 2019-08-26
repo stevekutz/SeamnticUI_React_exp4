@@ -10,7 +10,7 @@ const AvengersList = (props) => {
         <h2>{props.listProp}</h2>
             <Grid columns = '3' padded >
             {avengers.map(hero => (
-                <Card style = {{cursor: `pointer`}}>
+                <Card style = {{cursor: 'pointer'}} >
                     <Image src = {hero.thumbnail} size  = 'tiny'/>
                     <Link to = {`/avengers/${hero.id}`}>{hero.name} </Link>
                         
