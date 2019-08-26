@@ -7,15 +7,20 @@ import avengers from '../data/avengerInfo';
 const AvengersList = (props) => {
     return (
         <Container>
-            {avengers.map(item => (
-                <div key = {item.id}>
-                    {item.name}
-                
-                </div>
-            ))}
+            <h2>{props.listProp}</h2>
         
         </Container>
     )
 }
 
 export default AvengersList;
+
+/*
+            {avengers.map(item => (
+                <div key = {item.id}>
+                    {item.name}
+                
+                </div>
+            ))}
+
+*/
