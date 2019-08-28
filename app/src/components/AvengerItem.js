@@ -80,15 +80,16 @@ const AvengerItem = (props) => {
 
 
 
-            <Grid centered columns = '1'>
-                <Image src = {avenger.img}  alt = {avenger.name} height = '250px'/>
+            <Grid centered columns = '1' container padded >
+                <Image style = {{border: `1px solid pink`}} 
+                    src = {avenger.img}  alt = {avenger.name} height = '250px' />
             </Grid>
             
 
             <Container style = {{ border: '1px solid deeppink', display: 'flex', margin: '20px', justifyContent: 'space-around'}}>
                 <Card style = {{ border: '1px solid blue', display: 'flex', justifyContent: 'space-around', margin: '10px'}} >
                     <Label>{avenger.name} </Label>
-                    <Image src = {avenger.img} alt = {avenger.name} />
+                    <Image src = {avenger.img} alt = {avenger.name} height = '100px'/>
                     <Container>{avenger.nickname}</Container>
                 </Card>
                 <Card style = {{ border: '1px solid blue', display: 'flex', justifyContent: 'space-around', margin: '10px'}} > 
