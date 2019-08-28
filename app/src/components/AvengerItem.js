@@ -71,6 +71,10 @@ const AvengerItem = (props) => {
                 </Menu.Item>  
 
                 <Menu.Item>
+                    <Label color = 'pink'> {currentAvenger}</Label>      
+                </Menu.Item>
+
+                <Menu.Item>
                     <Button> 
                     <NavLink to={`/avengers/${    avengerInc(avenger.id)    }`}> Next Avenger </NavLink>
                         <Icon name = 'hand point right' />  
