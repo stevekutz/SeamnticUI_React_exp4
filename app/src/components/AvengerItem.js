@@ -34,7 +34,6 @@ const AvengerItem = (props) => {
     // console.log('typeof avenger', typeof(avenger.id) );
 
     const avengerInc = (val) => {
-
         let nextAvenger = parseInt(val, 10);
         if(nextAvenger === totalAvengers) {
             nextAvenger = 1;
@@ -43,8 +42,17 @@ const AvengerItem = (props) => {
         }
 
         return nextAvenger.toString();
+    }
 
-      //  return  (parseInt(val, 10)).toString();
+    const avengerDec = (val) => {
+        let nextAvenger = parseInt(val, 10);
+        if(nextAvenger === 1) {
+            nextAvenger = 9;
+        } else {
+            nextAvenger--;
+        }
+
+        return nextAvenger.toString();
     }
 
 
@@ -60,7 +68,7 @@ const AvengerItem = (props) => {
             <Menu.Item>
             <Button> 
                 <Icon name = 'hand point left' />  
-                <NavLink to={`/avengers/${parseInt(avenger.id, 10) - 1}`}> Previous Avenger </NavLink>
+                <NavLink to={`/avengers/${    avengerDec(avenger.id)    }`}> Previous Avenger </NavLink>
             </Button>
             </Menu.Item>  
 
