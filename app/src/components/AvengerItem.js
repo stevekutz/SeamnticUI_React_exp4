@@ -9,11 +9,49 @@ import avengers from '../data/avengerInfo';
 
 // mini tiny small medium large big huge massive
 const AvengerItem = (props) => {
-    console.log('>>>>>>>> ', props);
+    
     const totalAvengers = avengers.length;
-    const currentAvenger = props.match.params.id;
+    let currentAvenger = props.match.params.id;
+    console.log('>>>>>>>> ', currentAvenger, totalAvengers);
+
+    console.log('typeof totalAvengers', typeof(totalAvengers) );
+    console.log('typeof currentAvenger', typeof(currentAvenger) );
+
+    /*
+    const avengerInc = (currentAvenger) => {
+        let avengerId = currentAvenger;
+
+        if(currentAvenger === totalAvengers)  {avengerId = '1'};
+        console.log('Ave ID >> ', avengerId);
+        return avengerId;
+
+    }
+    */
+
+
 
     const avenger = avengers.find(e => e.id === currentAvenger);
+    // console.log('typeof avenger', typeof(avenger.id) );
+
+    const avengerInc = (val) => {
+
+        let nextAvenger = parseInt(val, 10);
+        if(nextAvenger === totalAvengers) {
+            nextAvenger = 1;
+        } else {
+            nextAvenger++;
+        }
+
+        return nextAvenger.toString();
+
+      //  return  (parseInt(val, 10)).toString();
+    }
+
+
+    // <NavLink to={`/avengers/${parseInt(avenger.id, 10) - 1}`}> Previous Avenger </NavLink>
+
+    // <NavLink to={`/avengers/${parseInt(avenger.id, 10) + 1}`}> Next Avenger </NavLink>
+
 
     return (
         <Container> 
@@ -28,7 +66,7 @@ const AvengerItem = (props) => {
 
             <Menu.Item>
                 <Button> 
-                    <NavLink to={`/avengers/${parseInt(avenger.id, 10) + 1}`}> Next Avenger </NavLink>
+                <NavLink to={`/avengers/${    avengerInc(avenger.id)    }`}> Next Avenger </NavLink>
                     <Icon name = 'hand point right' />  
                 </Button>
             </Menu.Item> 
