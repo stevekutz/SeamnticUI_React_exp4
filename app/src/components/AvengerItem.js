@@ -55,39 +55,40 @@ const AvengerItem = (props) => {
         return nextAvenger.toString();
     }
 
-
     // <NavLink to={`/avengers/${parseInt(avenger.id, 10) - 1}`}> Previous Avenger </NavLink>
-
     // <NavLink to={`/avengers/${parseInt(avenger.id, 10) + 1}`}> Next Avenger </NavLink>
 
 
     return (
         <Container> 
 
-        <Menu>
-            <Menu.Item>
-            <Button> 
-                <Icon name = 'hand point left' />  
-                <NavLink to={`/avengers/${    avengerDec(avenger.id)    }`}> Previous Avenger </NavLink>
-            </Button>
-            </Menu.Item>  
-
-            <Menu.Item>
+            <Menu>
+                <Menu.Item>
                 <Button> 
-                <NavLink to={`/avengers/${    avengerInc(avenger.id)    }`}> Next Avenger </NavLink>
-                    <Icon name = 'hand point right' />  
+                    <Icon name = 'hand point left' />  
+                    <NavLink to={`/avengers/${    avengerDec(avenger.id)    }`}> Previous Avenger </NavLink>
                 </Button>
-            </Menu.Item> 
-        </Menu>
+                </Menu.Item>  
+
+                <Menu.Item>
+                    <Button> 
+                    <NavLink to={`/avengers/${    avengerInc(avenger.id)    }`}> Next Avenger </NavLink>
+                        <Icon name = 'hand point right' />  
+                    </Button>
+                </Menu.Item> 
+            </Menu>
 
 
 
+            <Grid centered columns = '1'>
+                <Image src = {avenger.img}  alt = {avenger.name} height = '250px'/>
+            </Grid>
+            
 
-        <Image src = {avenger.img} size = 'huge' alt = {avenger.name}/>
             <Container style = {{ border: '1px solid deeppink', display: 'flex', margin: '20px', justifyContent: 'space-around'}}>
                 <Card style = {{ border: '1px solid blue', display: 'flex', justifyContent: 'space-around', margin: '10px'}} >
                     <Label>{avenger.name} </Label>
-                    <Image src = {avenger.img} size = 'huge' alt = {avenger.name}/>
+                    <Image src = {avenger.img} alt = {avenger.name} />
                     <Container>{avenger.nickname}</Container>
                 </Card>
                 <Card style = {{ border: '1px solid blue', display: 'flex', justifyContent: 'space-around', margin: '10px'}} > 
