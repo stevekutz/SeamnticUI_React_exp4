@@ -6,24 +6,30 @@ import {PushSpinner, SwishSpinner, GuardSpinner} from 'react-spinners-kit';
 import avengers from '../data/avengerInfo';
 
 
+
 // mini tiny small medium large big huge massive
 const AvengerItem = (props) => {
-    const avenger = avengers.find(e => e.id === props.match.params.id);
+    console.log('>>>>>>>> ', props);
+    const totalAvengers = avengers.length;
+    const currentAvenger = props.match.params.id;
+
+    const avenger = avengers.find(e => e.id === currentAvenger);
 
     return (
         <Container> 
 
         <Menu>
             <Menu.Item>
-            <Button icon = 'hand point left'>   
+            <Button> 
+                <Icon name = 'hand point left' />  
                 <NavLink to={`/avengers/${parseInt(avenger.id, 10) - 1}`}> Previous Avenger </NavLink>
             </Button>
-            
             </Menu.Item>  
 
             <Menu.Item>
-                <Button icon = 'hand point right'>   
+                <Button> 
                     <NavLink to={`/avengers/${parseInt(avenger.id, 10) + 1}`}> Next Avenger </NavLink>
+                    <Icon name = 'hand point right' />  
                 </Button>
             </Menu.Item> 
         </Menu>
