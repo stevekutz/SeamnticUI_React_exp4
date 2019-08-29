@@ -19,8 +19,9 @@ const AvengersList = (props) => {
                      {/*   <Card.Group style = {{ border: `1px solid purple`}}>    */}
                         <Card.Content key = {hero.id} >
                         <Link to = {`/avengers/${hero.id}`}>
-                        
-                        <Image src = {hero.thumbnail} height = '130px'/>
+                        <Container max-height = '150px'>
+                            <Image src = {hero.thumbnail} width = '100%'/>
+                        </Container>
                         <Label>  {hero.name}      </Label>           
                         </Link>
                         </Card.Content>
