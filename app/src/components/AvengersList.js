@@ -1,36 +1,33 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {Container, Card, Image, Grid, Label} from 'semantic-ui-react';
+import {Container, Card, Image, Grid, Label, Group} from 'semantic-ui-react';
 
 import avengers from '../data/avengerInfo';
 
 // mini tiny small medium large big huge massive
 const AvengersList = (props) => {
     return (
-        <Container>
+        <div>
         <h2>{props.listProp}</h2>
-        <Grid style = {{border: `1px solid green`}}   columns = '4'>
+        
 
         {avengers.map(hero => (
-                <Card key = {hero.id} >
+                <Card.Group key = {hero.id} centered>
                     <Card.Content style = {{cursor: 'pointer'}}>
-                
-                        <Grid stretched>
-                            <Image src = {hero.thumbnail}  height = '150px'/>
+                                        
+                            <Image src = {hero.thumbnail} size  = 'small' height = '150px'/>
                             <Label>
-                            <Link to = {`/avengers/${hero.id}`}>{hero.name} </Link>
-                            </Label>
-                        
-                        </Grid>
-                    
+                                <Link to = {`/avengers/${hero.id}`}>{hero.name} </Link>
+                            </Label>           
+                   
                     </Card.Content>
                     
-                </Card>
+                </Card.Group>
                 
                 ))}
                 
-                </Grid>
-        </Container>
+        
+        </div>
 
     )
 }
