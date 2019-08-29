@@ -11,21 +11,25 @@ const AvengersList = (props) => {
         <h2>{props.listProp}</h2>
         
 
-        {avengers.map(hero => (
-                <Card.Group key = {hero.id} centered>
-                    <Card.Content style = {{cursor: 'pointer'}}>
-                                        
-                            <Image src = {hero.thumbnail} size  = 'small' height = '150px'/>
-                            <Label>
-                                <Link to = {`/avengers/${hero.id}`}>{hero.name} </Link>
-                            </Label>           
-                   
-                    </Card.Content>
+            <Card.Group centered itemsPerRow={5}
+                style = {{ border: `1px solid blue`}}>
+                {avengers.map(hero => (
+                        <Card>
+                        
+                     {/*   <Card.Group style = {{ border: `1px solid purple`}}>    */}
+                        <Card.Content key = {hero.id} >
+                        <Link to = {`/avengers/${hero.id}`}>
+                        
+                        <Image src = {hero.thumbnail} height = '130px'/>
+                        <Label>  {hero.name}      </Label>           
+                        </Link>
+                        </Card.Content>
+                    {/*    </Card.Group>    */}
+                        </Card>
                     
-                </Card.Group>
-                
-                ))}
-                
+                    
+                    ))}
+            </Card.Group>
         
         </div>
 
