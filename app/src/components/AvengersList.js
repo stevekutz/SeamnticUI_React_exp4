@@ -12,18 +12,18 @@ const AvengersList = (props) => {
         
 
             <Card.Group centered itemsPerRow={5}
-                style = {{ border: `1px solid blue`}}>
+                style = {{ border: `1px solid blue`, margin: `10px`}}>
                 {avengers.map(hero => (
                         <Card>
-                        
+                     {/* breaks layout with first item no aligning correctly */}   
                      {/*   <Card.Group style = {{ border: `1px solid purple`}}>    */}
                         <Card.Content key = {hero.id} >
-                        <Link to = {`/avengers/${hero.id}`}>
-                        <Container max-height = '150px'>
-                            <Image src = {hero.thumbnail} width = '100%'/>
-                        </Container>
-                        <Label>  {hero.name}      </Label>           
-                        </Link>
+                            <Link to = {`/avengers/${hero.id}`}>
+                                <Container max-height = '150px'>
+                                    <Image src = {hero.thumbnail} width = '100%' rounded/>
+                                </Container>
+                                <Label>  {hero.name} </Label>           
+                            </Link>
                         </Card.Content>
                     {/*    </Card.Group>    */}
                         </Card>

@@ -20,12 +20,12 @@ function App() {
     <div className="App">
         <Menu>
           <Menu.Item>
-            <PushSpinner  size={30} color="rebeccapurple"/>
-            <NavLink to  = '/'> Landing Page </NavLink>
+            <PushSpinner  size={30} color="rebeccapurple" />
+            <NavLink to  = '/'   style  = {{margin: `10px`}}> Landing Page </NavLink>
           </Menu.Item>        
           <Menu.Item>
             <GuardSpinner size = {30} frontColor= "deeppink" backColor = 'dodgerblue'/>
-            <NavLink to  = '/avengers'> Avengers List Page </NavLink>
+            <NavLink to  = '/avengers' style  = {{margin: `10px`}}> Avengers List Page </NavLink>
           </Menu.Item>
         </Menu>
 
