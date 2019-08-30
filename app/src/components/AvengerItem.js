@@ -77,9 +77,18 @@ const AvengerItem = (props) => {
                 <Menu.Item>
                     <Button> 
                     <NavLink to={`/avengers/${    avengerInc(avenger.id)    }`}> Next Avenger </NavLink>
+                    <NavLink to  = '/avengers' style  = {{margin: `10px`}}> Avengers List Page </NavLink>
                         <Icon name = 'hand point right' />  
                     </Button>
                 </Menu.Item> 
+
+                <Menu.Item>
+                    <Button> 
+                    <NavLink to  = '/avengers'> Avengers List </NavLink>
+                        <Icon name = 'meh outline' />  
+                    </Button>
+                </Menu.Item> 
+
             </Menu>
 
 
