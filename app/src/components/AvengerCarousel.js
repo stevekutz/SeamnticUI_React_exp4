@@ -34,13 +34,13 @@ class AvengerCarousel extends React.Component {
 
     avengerDec = () => {
 
-        if(this.currentAvenger === 1) {
-            this.currentAvenger = 9;
+        if(this.state.currentAvenger === 0) {
+            this.setState({ currentAvenger:  8  })
         } else {
-            this.currentAvenger--;
+            this.setState({ currentAvenger: this.state.currentAvenger - 1     }) 
         }
-
-        return this.currentAvenger;
+        console.log(this.state.totalAvengers, this.state.currentAvenger);
+        return this.state.currentAvenger;
     }
     
     render() {
