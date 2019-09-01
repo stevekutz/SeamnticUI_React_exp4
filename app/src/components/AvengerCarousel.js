@@ -77,26 +77,49 @@ class AvengerCarousel extends React.Component {
                     </Menu.Item> 
                 </Menu>
     
-    
-                <Grid centered columns = '1' container padded >
-                    <Image style = {{border: `1px solid green`}} 
+                
+                <Grid centered columns = '3' container padded >
+
+                    <Grid.Column width = '2'>
+                        <Button onClick = {this.avengerDec}> 
+                            <Icon name = 'hand point left' />  
+                        </Button>
+                    </Grid.Column>
+
+                    <Grid.Column width = '10'>
+                        
+                        
+                        <Image style = {{border: `1px solid green`}} 
                         src = {avengers[currentAvenger].img}  alt = {avengers[currentAvenger].name} height = '250px' />
+                        
+                        {/*  style = {{ border: '1px solid deeppink', display: 'flex', justifyContent: 'space-around'}} */}
+                        {/*  style = {{ border: '1px solid blue', display: 'flex', justifyContent: 'space-around', margin: '10px'}}  */}
+
+                        <Container >
+                            <Card  >
+                                <Card.Header style = {{fontWeight: 'bold'}}>{avengers[currentAvenger].name} </Card.Header>
+                                <Image src = {avengers[currentAvenger].img} alt = {avengers[currentAvenger].name} />
+                                <Container>{avengers[currentAvenger].nickname}</Container>
+                            </Card>
+                            <Card style = {{ border: '1px solid blue', display: 'flex', justifyContent: 'space-around', margin: '10px', boxSizing: `border-box`}} > 
+                                <Card.Header style = {{fontWeight: 'bold'}}> Synopisis </Card.Header>    
+                                <Card.Description style = {{background: 'pink'}}>
+                                {avengers[currentAvenger].description}                     
+                                </Card.Description>                            
+                            </Card>
+                        </Container>
+                    </Grid.Column>
+
+                    <Grid.Column width = '3'>
+                        <Button onClick = {this.avengerDec}> 
+                        <Icon name = 'hand point right' />  
+                        </Button>
+                    </Grid.Column>
+
+
                 </Grid>
-                
-                <Container style = {{ border: '1px solid deeppink', display: 'flex', margin: '20px', justifyContent: 'space-around'}}>
-                <Card style = {{ border: '1px solid blue', display: 'flex', justifyContent: 'space-around', margin: '10px'}} >
-                    <Card.Header style = {{fontWeight: 'bold'}}>{avengers[currentAvenger].name} </Card.Header>
-                    <Image src = {avengers[currentAvenger].img} alt = {avengers[currentAvenger].name} height = '100px'/>
-                    <Container>{avengers[currentAvenger].nickname}</Container>
-                </Card>
-                <Card style = {{ border: '1px solid blue', display: 'flex', justifyContent: 'space-around', margin: '10px', boxSizing: `border-box`}} > 
-                    <Card.Header style = {{fontWeight: 'bold'}}> Synopisis </Card.Header>    
-                    <Card.Description style = {{background: 'pink'}}>
-                            {avengers[currentAvenger].description}                     
-                    </Card.Description>
-                
-                </Card>
-                </Container>
+
+
             </Grid>    
 
         )
