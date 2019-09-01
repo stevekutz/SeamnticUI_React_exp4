@@ -60,12 +60,3 @@ function App() {
 }
 
 export default App;
-/*
-          <Menu.Item>
-            <Route
-              exact path = '/' 
-              render = { (props) => <LandingPage {...props} landingProp = {` the Landing Page`} />}
-            />
-          </Menu.Item>
-
-*/

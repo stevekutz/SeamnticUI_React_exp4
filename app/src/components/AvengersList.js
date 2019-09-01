@@ -16,7 +16,7 @@ const AvengersList = (props) => {
                 
                 style = {{ border: `1px solid blue`, margin: `10px`}}>
                 {avengers.map(hero => (
-                        <Card>
+                        <Card key = {hero.id}>
                      {/* breaks layout with first item no aligning correctly */}   
                      {/*   <Card.Group style = {{ border: `1px solid purple`}}>    */}
                         <Card.Content key = {hero.id}>
