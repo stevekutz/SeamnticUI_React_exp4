@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import {Button, Container, Icon, Label, Card, Image, Grid, Menu} from 'semantic-ui-react';
+import {Button, Container, Icon, Label, Card, Image, Grid, Menu, Message, Segment} from 'semantic-ui-react';
 import {PushSpinner, SwishSpinner, GuardSpinner} from 'react-spinners-kit';
 
 import avengers from '../data/avengerInfo';
@@ -62,51 +62,54 @@ const AvengerItem = (props) => {
     return (
         <Container> 
 
-            <Menu>
+            <Menu style = {{display: 'flex', justifyContent: `space-evenly`}}>
+            
                 <Menu.Item>
-                <Button> 
-                    <Icon name = 'hand point left' />  
-                    <NavLink to={`/avengers/${    avengerDec(avenger.id)    }`}> Previous Avenger </NavLink>
-                </Button>
+                    <Button> 
+                        <Icon name = 'hand point left' />  
+                        <NavLink to={`/avengers/${    avengerDec(avenger.id)    }`}> Previous Avenger </NavLink>
+                    </Button>
                 </Menu.Item>  
-
-                <Menu.Item>
-                    <Label color = 'pink'> {currentAvenger}</Label>      
+                
+                <Menu.Item active color =  'pink' style = {{display: 'flex', justifyContent: 'center', border: '1px solid purple'}}>
+                    <div color = 'pink'> {currentAvenger}</div>      
                 </Menu.Item>
 
                 <Menu.Item>
                     <Button> 
-                    <NavLink to={`/avengers/${    avengerInc(avenger.id)    }`}> Next Avenger </NavLink>
-                    <NavLink to  = '/avengers' style  = {{margin: `10px`}}> Avengers List Page </NavLink>
+                        <NavLink to={`/avengers/${    avengerInc(avenger.id)    }`}> Next Avenger </NavLink>
                         <Icon name = 'hand point right' />  
                     </Button>
                 </Menu.Item> 
-
+                           
                 <Menu.Item>
                     <Button> 
-                    <NavLink to  = '/avengers'> Avengers List </NavLink>
+                        <NavLink to  = '/avengers'> Avengers List </NavLink>
                         <Icon name = 'meh outline' />  
                     </Button>
                 </Menu.Item> 
-
             </Menu>
 
 
 
             <Grid centered columns = '1' container padded >
-                <Image style = {{border: `1px solid pink`}} 
+                <Image style = {{border: `1px solid green`}} 
                     src = {avenger.img}  alt = {avenger.name} height = '250px' />
             </Grid>
             
 
             <Container style = {{ border: '1px solid deeppink', display: 'flex', margin: '20px', justifyContent: 'space-around'}}>
                 <Card style = {{ border: '1px solid blue', display: 'flex', justifyContent: 'space-around', margin: '10px'}} >
-                    <Label>{avenger.name} </Label>
+                    <Card.Header style = {{fontWeight: 'bold'}}>{avenger.name} </Card.Header>
                     <Image src = {avenger.img} alt = {avenger.name} height = '100px'/>
                     <Container>{avenger.nickname}</Container>
                 </Card>
-                <Card style = {{ border: '1px solid blue', display: 'flex', justifyContent: 'space-around', margin: '10px'}} > 
-                    <Label> {avenger.description} </Label>
+                <Card style = {{ border: '1px solid blue', display: 'flex', justifyContent: 'space-around', margin: '10px', boxSizing: `border-box`}} > 
+                    <Card.Header style = {{fontWeight: 'bold'}}> Synopisis </Card.Header>    
+                    <Card.Description style = {{background: 'pink'}}>
+                            {avenger.description}                     
+                    </Card.Description>
+                
                 </Card>
             
             </Container>   
