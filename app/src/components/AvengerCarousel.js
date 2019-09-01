@@ -11,7 +11,7 @@ class AvengerCarousel extends React.Component {
     
         state =  {
             totalAvengers: avengers.length,
-            currentAvenger: 1,
+            currentAvenger: 0,
     }
 
 
@@ -21,8 +21,8 @@ class AvengerCarousel extends React.Component {
         console.log('>> state ', this.state);
         console.log('avengers', avengers);
 
-        if(this.state.currentAvenger === this.state.totalAvengers) {
-            this.setState({ currentAvenger:  1  })  
+        if(this.state.currentAvenger === this.state.totalAvengers - 1 ) {
+            this.setState({ currentAvenger:  0  })  
         } else {
             this.setState({ currentAvenger: this.state.currentAvenger + 1     })    
         }
@@ -44,7 +44,9 @@ class AvengerCarousel extends React.Component {
     }
     
     render() {
+        const {currentAvenger} = this.state;
        return (
+
             <Grid centered columns = '3' container padded >
     
                 <Menu style = {{display: 'flex', justifyContent: `space-evenly`}}>
@@ -76,10 +78,27 @@ class AvengerCarousel extends React.Component {
                 </Menu>
     
     
-                <div>{this.state.currentAvenger}</div>
-  
+                <Grid centered columns = '1' container padded >
+                    <Image style = {{border: `1px solid green`}} 
+                        src = {avengers[currentAvenger].img}  alt = {avengers[currentAvenger].name} height = '250px' />
+                </Grid>
                 
-            </Grid>
+                <Container style = {{ border: '1px solid deeppink', display: 'flex', margin: '20px', justifyContent: 'space-around'}}>
+                <Card style = {{ border: '1px solid blue', display: 'flex', justifyContent: 'space-around', margin: '10px'}} >
+                    <Card.Header style = {{fontWeight: 'bold'}}>{avengers[currentAvenger].name} </Card.Header>
+                    <Image src = {avengers[currentAvenger].img} alt = {avengers[currentAvenger].name} height = '100px'/>
+                    <Container>{avengers[currentAvenger].nickname}</Container>
+                </Card>
+                <Card style = {{ border: '1px solid blue', display: 'flex', justifyContent: 'space-around', margin: '10px', boxSizing: `border-box`}} > 
+                    <Card.Header style = {{fontWeight: 'bold'}}> Synopisis </Card.Header>    
+                    <Card.Description style = {{background: 'pink'}}>
+                            {avengers[currentAvenger].description}                     
+                    </Card.Description>
+                
+                </Card>
+                </Container>
+            </Grid>    
+
         )
     }
 }
