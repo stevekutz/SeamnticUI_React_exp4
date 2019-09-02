@@ -45,6 +45,8 @@ class AvengerCarousel extends React.Component {
     // <Button onClick = {this.avengerDec}> 
 //  <button onClick = {() => {this.props.increment() }}>inc</button>
 
+// red orange yellow olive green teal blue violet purple pink brown grey black facebook google plus instagram linkedin twitter vk youtub
+
     render() {
         const {currentAvenger} = this.state;
         return (
@@ -55,18 +57,18 @@ class AvengerCarousel extends React.Component {
             <Menu style = {{display: 'flex', justifyContent: `space-evenly`}}>
                     
                     <Menu.Item>
-                    <Button onClick = { () => {this.avengerDec()} }>
+                    <Button inverted color = 'red' onClick = { () => {this.avengerDec()} }>
                             <Icon name = 'hand point left' />  
                             Previous Avenger
                         </Button>
                     </Menu.Item>  
                     
-                    <Menu.Item active color =  'pink' style = {{display: 'flex', justifyContent: 'center', border: '1px solid purple'}}>
-                        <div color = 'pink'> {this.state.currentAvenger}</div>      
+                    <Menu.Item color =  'pink' style = {{display: 'flex', justifyContent: 'center', border: '1px solid purple'}}>
+                        <div color = 'facebook'> {this.state.currentAvenger}</div>      
                     </Menu.Item>
                                     
                     <Menu.Item>
-                        <Button onClick = {this.avengerInc} > 
+                        <Button inverted color = 'red' onClick = {this.avengerInc} > 
                             Next Avenger
                             <Icon name = 'hand point right' />  
                         </Button>
@@ -85,37 +87,33 @@ class AvengerCarousel extends React.Component {
                     <Grid centered columns = '3' container padded >
                                     
                         <Grid.Column width = '2' style = {{border: '1px solid grey'}}>
-                            <Button onClick = {this.avengerDec}> 
-                                <Icon name = 'hand point left' />  
-                            </Button>
+                        <Button inverted circular size = 'big' color = 'blue' icon = 'angle left'   onClick = {this.avengerDec}/> 
                         </Grid.Column>
                                         
-                        <Grid.Column width = '10' style = {{border: '1px solid green'}}>                  
-                            <Image style = {{border: `1px solid green`}} 
-                                src = {avengers[currentAvenger].img}  alt = {avengers[currentAvenger].name} height = '250px' />
+                        <Grid.Column centered width = '10' style = {{border: '1px solid green'}}>                  
+                            <Image centered style = {{borderRadius: `50%`}} 
+                                src = {avengers[currentAvenger].thumbnail}  alt = {avengers[currentAvenger].name} height = '500px' />
                                                 
                                                 {/*  style = {{ border: '1px solid deeppink', display: 'flex', justifyContent: 'space-around'}} */}
                                                 {/*  style = {{ border: '1px solid blue', display: 'flex', justifyContent: 'space-around', margin: '10px'}}  */}
                                                 
-                            <Container>
-                                <Card>
+                            <Container textAlign = 'center' style = {{margin: '10px'}}>
+                                <Card centered>
                                     <Card.Header style = {{fontWeight: 'bold'}}>{avengers[currentAvenger].name} </Card.Header>
-                                    <Image src = {avengers[currentAvenger].img} alt = {avengers[currentAvenger].name} />
+                                    <Image src = {avengers[currentAvenger].img} alt = {avengers[currentAvenger].name} height = '150px'/>
                                     <Container>{avengers[currentAvenger].nickname}</Container>
                                 </Card>
-                                <Card style = {{ border: '1px solid blue', display: 'flex', justifyContent: 'space-around', margin: '10px', boxSizing: `border-box`}} > 
+                                <Card  centered> 
                                     <Card.Header style = {{fontWeight: 'bold'}}> Synopisis </Card.Header>    
-                                    <Card.Description style = {{background: 'pink'}}>
+                                    <Card.Description style = {{background: 'skyblue'}}>
                                             {avengers[currentAvenger].description}                     
                                     </Card.Description>                            
                                 </Card>
                             </Container>
                         </Grid.Column>
                                         
-                        <Grid.Column width = '3' style = {{border: '1px solid gray'}}>
-                            <Button onClick = {this.avengerDec}> 
-                                <Icon name = 'hand point right' />  
-                            </Button>
+                        <Grid.Column width = '2' style = {{border: '1px solid gray'}}>
+                            <Button inverted circular size = 'big' color = 'blue' icon = 'angle right'   onClick = {this.avengerDec}/> 
                         </Grid.Column>
                                         
                                         
