@@ -19,18 +19,18 @@ function App() {
   return (
     <div className="App">
         <Menu>
-          <Menu.Item>
+          <Menu.Item style = {{border: `1px solid purple`, margin: '10px'}} >
             <PushSpinner  size={30} color="rebeccapurple" />
             <NavLink to  = '/'   style  = {{margin: `10px`}}> Landing Page </NavLink>
           </Menu.Item>        
-          <Menu.Item>
+          <Menu.Item style = {{border: `1px solid purple`, margin: '10px'}} >
             <GuardSpinner size = {30} frontColor= "deeppink" backColor = 'dodgerblue'/>
             <NavLink to  = '/avengers' style  = {{margin: `10px`}}> Avengers List Page </NavLink>
           </Menu.Item>
-          <Menu.Item>
+          <Menu.Item style = {{border: `1px solid purple`, margin: '10px'}} >
             <PongSpinner size = {30} color = 'seagreen'/>
             <NavLink to  = '/avengersCarousel' style  = {{margin: `10px`}}> Avengers Carousel</NavLink>
-        </Menu.Item>
+          </Menu.Item>
 
         </Menu>
 

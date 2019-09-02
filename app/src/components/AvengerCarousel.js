@@ -42,7 +42,9 @@ class AvengerCarousel extends React.Component {
         console.log(this.state.totalAvengers, this.state.currentAvenger);
         return this.state.currentAvenger;
     }
-    
+    // <Button onClick = {this.avengerDec}> 
+//  <button onClick = {() => {this.props.increment() }}>inc</button>
+
     render() {
         const {currentAvenger} = this.state;
         return (
@@ -53,7 +55,7 @@ class AvengerCarousel extends React.Component {
             <Menu style = {{display: 'flex', justifyContent: `space-evenly`}}>
                     
                     <Menu.Item>
-                        <Button onClick = {this.avengerDec}> 
+                    <Button onClick = { () => {this.avengerDec()} }>
                             <Icon name = 'hand point left' />  
                             Previous Avenger
                         </Button>
@@ -82,13 +84,13 @@ class AvengerCarousel extends React.Component {
                 <Container style = {{border: '1px solid red', margin: '100 auto'}}>              
                     <Grid centered columns = '3' container padded >
                                     
-                        <Grid.Column width = '2'>
+                        <Grid.Column width = '2' style = {{border: '1px solid grey'}}>
                             <Button onClick = {this.avengerDec}> 
                                 <Icon name = 'hand point left' />  
                             </Button>
                         </Grid.Column>
                                         
-                        <Grid.Column width = '10'>                  
+                        <Grid.Column width = '10' style = {{border: '1px solid green'}}>                  
                             <Image style = {{border: `1px solid green`}} 
                                 src = {avengers[currentAvenger].img}  alt = {avengers[currentAvenger].name} height = '250px' />
                                                 
@@ -110,7 +112,7 @@ class AvengerCarousel extends React.Component {
                             </Container>
                         </Grid.Column>
                                         
-                        <Grid.Column width = '3'>
+                        <Grid.Column width = '3' style = {{border: '1px solid gray'}}>
                             <Button onClick = {this.avengerDec}> 
                                 <Icon name = 'hand point right' />  
                             </Button>
