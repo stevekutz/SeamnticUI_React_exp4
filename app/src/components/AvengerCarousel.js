@@ -56,10 +56,10 @@ class AvengerCarousel extends React.Component {
             // this.setState( prevState => {currentAvenger: --prevState.currentAvenger} )
 
             // oldschool ES5 way 
-            this.setState( function(prevState) {
-                return {currentAvenger: --prevState.currentAvenger}
-                } 
-            )
+            // this.setState( function(prevState) {
+            //     return {currentAvenger: --prevState.currentAvenger}
+            //     } 
+            // )
             
             // don't work oldschool ES5 way with bad syntax, 
             // this.setState({ function(prevState) {
