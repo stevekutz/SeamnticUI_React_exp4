@@ -54,7 +54,7 @@ function App() {
                           </Dropdown.Item>
                           <Dropdown.Item style = {{border: `1px solid purple`, margin: '10px'}} >
                           <TraceSpinner size = {40} frontColor= "skyblue" backColor = 'forestgreen'/>
-                            <NavLink to  = '/avengersHooksCarousel' style  = {{margin: `10px`}}> Avengers Carousel</NavLink>
+                            <NavLink to  = '/avengersHookCarousel' style  = {{margin: `10px`}}> Avengers Hook Carousel</NavLink>
                           </Dropdown.Item>
                         </Dropdown.Menu>
                       </Dropdown>  
