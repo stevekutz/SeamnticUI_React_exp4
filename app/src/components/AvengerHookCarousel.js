@@ -6,6 +6,8 @@ import {Button, Container, Icon, Label, Card, Image, Grid, Menu, Message, Segmen
 const AvengerHookCarousel = (props) => {
     const[currentAvenger, changeCurrentAvenger] = useState(0);
 
+    const avengers  = props.avengerProps;
+
     const avengerInc = () => {
 
 
@@ -50,6 +52,8 @@ const AvengerHookCarousel = (props) => {
             <Card>
                 <Card.Header> {props.carouselHookProp}</Card.Header>
                 <CurrentAvenger currentAvenger = {currentAvenger}/>
+                <Image centered style = {{borderRadius: `50%`}} 
+                                    src = {avengers[currentAvenger].thumbnail}  alt = {props.avengerProps[currentAvenger].name} height = '500px' />
             </Card>
         
         
@@ -59,8 +63,13 @@ const AvengerHookCarousel = (props) => {
 
 };
 
-const CurrentAvenger = memo(({currentAvenger}) => {
-    return <Container>{currentAvenger}</Container>
+const CurrentAvenger = memo(({currentAvenger}, props) => {
+    const avengers  = props.avengerProps;
+    return (
+        <Card>
+            <Container>{currentAvenger}</Container>      
+        </Card>
+    )
 
 });
 
