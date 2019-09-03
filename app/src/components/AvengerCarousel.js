@@ -14,7 +14,8 @@ class AvengerCarousel extends React.Component {
             currentAvenger: 0,
     }
 
-
+    // Not here !!!!! 
+    // const {currentAvenger, totalAvengers} = this.state;
   
     avengerInc = () => {
         console.log('inc fired');
@@ -34,10 +35,25 @@ class AvengerCarousel extends React.Component {
 
     avengerDec = () => {
 
+        //const {currentAvenger, totalAvengers} = this.state;
+
         if(this.state.currentAvenger === 0) {
             this.setState({ currentAvenger:  8  })
         } else {
-            this.setState({ currentAvenger: this.state.currentAvenger - 1     }) 
+            // Old school way
+            // this.setState({ currentAvenger: this.state.currentAvenger - 1     }) 
+
+            // Better
+            // this.setState(prevState => {
+            //    return {currentAvenger: --prevState.currentAvenger }
+            //  })
+            
+            // cleaner
+            // this.setState( prevState => ({currentAvenger: --prevState.currentAvenger}) )
+
+            // don't work
+            this.setState( prevState => {currentAvenger: --prevState.currentAvenger} )
+
         }
         console.log(this.state.totalAvengers, this.state.currentAvenger);
         return this.state.currentAvenger;
@@ -90,7 +106,7 @@ class AvengerCarousel extends React.Component {
                         <Button inverted circular size = 'big' color = 'blue' icon = 'angle left'   onClick = {this.avengerDec}/> 
                         </Grid.Column>
                                         
-                        <Grid.Column centered width = '10' style = {{border: '1px solid green'}}>                  
+                        <Grid.Column  width = '10' style = {{border: '1px solid green'}}>                  
                             <Image centered style = {{borderRadius: `50%`}} 
                                 src = {avengers[currentAvenger].thumbnail}  alt = {avengers[currentAvenger].name} height = '500px' />
                                                 

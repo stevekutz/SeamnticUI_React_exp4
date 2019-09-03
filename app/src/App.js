@@ -18,7 +18,7 @@ import avengerInfo from './data/avengerInfo';
 function App() {
   return (
     <div className="App">
-        <Menu active>
+        <Menu>
           <Menu.Item style = {{border: `1px solid purple`, margin: '10px'}} >
             <PushSpinner  size={30} color="rebeccapurple" />
             <NavLink to  = '/'   style  = {{margin: `10px`}}> Landing Page </NavLink>
@@ -32,7 +32,7 @@ function App() {
             <NavLink to  = '/avengersCarousel' style  = {{margin: `10px`}}> Avengers Carousel</NavLink>
           </Menu.Item>
           
-          <Menu.Menu vertical position = 'right'>
+          <Menu.Menu position = 'right'>
                       <Dropdown item text='Menu Routes Dropdown'>
                       <Dropdown.Menu>
                       <Dropdown.Item style = {{border: `1px solid purple`, margin: '10px'}} >
