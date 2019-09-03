@@ -2,7 +2,7 @@ import React from 'react';
 
 import {NavLink} from 'react-router-dom';
 import {Button, Container, Icon, Label, Card, Image, Grid, Menu, Message, Segment} from 'semantic-ui-react';
-import {PushSpinner, SwishSpinner, GuardSpinner} from 'react-spinners-kit';
+
 
 import avengers from '../data/avengerInfo';
 
@@ -40,7 +40,8 @@ class AvengerCarousel extends React.Component {
         if(this.state.currentAvenger === 0) {
             this.setState({ currentAvenger:  8  })
         } else {
-            // Old school way
+
+            // unsafe way way
             // this.setState({ currentAvenger: this.state.currentAvenger - 1     }) 
 
             // Better
@@ -51,9 +52,21 @@ class AvengerCarousel extends React.Component {
             // cleaner
             // this.setState( prevState => ({currentAvenger: --prevState.currentAvenger}) )
 
-            // don't work
-            this.setState( prevState => {currentAvenger: --prevState.currentAvenger} )
+            // don't work, bad syntax with missing ( ) around obj
+            // this.setState( prevState => {currentAvenger: --prevState.currentAvenger} )
 
+            // oldschool ES5 way 
+            this.setState( function(prevState) {
+                return {currentAvenger: --prevState.currentAvenger}
+                } 
+            )
+            
+            // don't work oldschool ES5 way with bad syntax, 
+            // this.setState({ function(prevState) {
+            //         return {currentAvenger: --prevState.currentAvenger}
+            //     } 
+            // })
+            
         }
         console.log(this.state.totalAvengers, this.state.currentAvenger);
         return this.state.currentAvenger;
