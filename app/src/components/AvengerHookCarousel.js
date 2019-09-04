@@ -20,7 +20,7 @@ const AvengerHookCarousel = (props) => {
             changeCurrentAvenger(currentAvenger => currentAvenger + 1);
             
         }
-        console.log(props.avengerProps, currentAvenger);
+        // console.log(avengers, currentAvenger);
     }  
 
 
@@ -43,13 +43,13 @@ const AvengerHookCarousel = (props) => {
 
 
     return (
-        <div>
+        <div style = {{border: '3px solid brown'}}>
             
 
             <Button onClick = {avengerDec}> previous </Button>
             <Button onClick = {avengerInc}> next </Button>
 
-            <Card>
+            <Card style = {{border: '1px solid deeppink', margin: `2px auto`}}>
                 <Card.Header> {props.carouselHookProp}</Card.Header>
                 <CurrentAvenger currentAvenger = {currentAvenger}/>
                 <Image centered style = {{borderRadius: `50%`}} 
@@ -64,7 +64,7 @@ const AvengerHookCarousel = (props) => {
 };
 
 const CurrentAvenger = memo(({currentAvenger}, props) => {
-    const avengers  = props.avengerProps;
+    // const avengers  = props.avengerProps;
     return (
         <Card>
             <Container>{currentAvenger}</Container>      
