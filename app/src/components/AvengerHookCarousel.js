@@ -49,11 +49,17 @@ const AvengerHookCarousel = (props) => {
             <Button onClick = {avengerDec}> previous </Button>
             <Button onClick = {avengerInc}> next </Button>
 
-            <Card style = {{border: '1px solid deeppink', margin: `2px auto`}}>
-                <Card.Header> {props.carouselHookProp}</Card.Header>
+            <Card style = {{border: '1px solid deeppink', margin: `10px auto`, padding: `15px`}}>
+                <Card.Header style = {{fontWeight: 'bolder'}}> {props.carouselHookProp}</Card.Header>
+                <Card.Content>{avengers[currentAvenger].name}</Card.Content>
+                <Card.Content>{avengers[currentAvenger].nickname}</Card.Content>
                 <CurrentAvenger currentAvenger = {currentAvenger}/>
                 <Image centered style = {{borderRadius: `50%`}} 
                                     src = {avengers[currentAvenger].thumbnail}  alt = {props.avengerProps[currentAvenger].name}  />
+                <Label>Card Content used</Label>
+                <Card.Content> {avengers[currentAvenger].description} </Card.Content>
+                <Label>Card Description used</Label> 
+                <Card.Description> {avengers[currentAvenger].description} </Card.Description>                    
             </Card>
         
         
