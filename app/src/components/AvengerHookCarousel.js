@@ -53,7 +53,7 @@ const AvengerHookCarousel = (props) => {
                 <Card.Header> {props.carouselHookProp}</Card.Header>
                 <CurrentAvenger currentAvenger = {currentAvenger}/>
                 <Image centered style = {{borderRadius: `50%`}} 
-                                    src = {avengers[currentAvenger].thumbnail}  alt = {props.avengerProps[currentAvenger].name} height = '500px' />
+                                    src = {avengers[currentAvenger].thumbnail}  alt = {props.avengerProps[currentAvenger].name}  />
             </Card>
         
         
@@ -63,7 +63,7 @@ const AvengerHookCarousel = (props) => {
 
 };
 
-const CurrentAvenger = memo(({currentAvenger}, props) => {
+const CurrentAvenger = memo(({currentAvenger}) => {
     // const avengers  = props.avengerProps;
     return (
         <Card>
