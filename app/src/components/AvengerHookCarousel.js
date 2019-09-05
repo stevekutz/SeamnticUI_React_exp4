@@ -43,7 +43,7 @@ const AvengerHookCarousel = (props) => {
 
 
     return (
-        <div style = {{border: '3px solid brown'}}>
+        <div>
             
 
             <Button onClick = {avengerDec}> previous </Button>
@@ -72,12 +72,21 @@ const AvengerHookCarousel = (props) => {
 const CurrentAvenger = memo(({currentAvenger}) => {
     // const avengers  = props.avengerProps;
     return (
-        <Card>
-            <Container>{currentAvenger}</Container>      
-        </Card>
+        <div style = {{border: '1px solid blue' , margin: '2px auto', width: '30%'}}>
+
+                <div style = {{textAlign: 'center'}}> {currentAvenger} </div>     
+
+        </div>
     )
 
 });
 
 
 export default AvengerHookCarousel;
+
+/*
+            <Card>
+                <Container textAlign = 'center'>{currentAvenger}</Container> 
+                <div> {currentAvenger} </div>     
+            </Card>
+*/

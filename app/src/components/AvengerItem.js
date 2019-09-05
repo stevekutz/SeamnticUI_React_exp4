@@ -48,7 +48,7 @@ const AvengerItem = (props) => {
 
     return (
         <Container> 
-
+            <h3> {props.heroProp}</h3>
             <Menu style = {{display: 'flex', justifyContent: `space-evenly`}}>
             
                 <Menu.Item>

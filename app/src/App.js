@@ -73,7 +73,7 @@ function App() {
 
         <Route
           exact path = '/avengers'
-          render = { (props) => <AvengersList {...props}  listProp = {' the Avengers '}/> }
+          render = { (props) => <AvengersList {...props}  listProp = {' the Avengers List page '}/> }
         /> 
         <Route
           exact path = '/' 
